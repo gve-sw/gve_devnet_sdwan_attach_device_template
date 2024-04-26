@@ -1,0 +1,7 @@
+- connection: local
+  gather_facts: false
+  hosts: all
+  name: Cisco DevNet SDWAN Ansible PoV
+  roles:
+  - role: login
+  - role: token

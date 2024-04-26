@@ -1,0 +1,16 @@
+- name: get device input
+  uri:
+    url: https://{{ansible_host}}:{{ansible_port}}/dataservice/template/device/config/input
+    method: POST
+    return_content: yes
+    validate_certs: no
+    body: "{{lookup('file', '{{ role_path }}/files/input')}}"
+    body_format: json
+    headers:
+      X-XSRF-TOKEN: "{{token_result.content}}"
+      Cookie: "{{login.set_cookie}}"
+      Content-Type: "application/json"
+  register: input_result
+
+-  debug:
+    msg: "{{input_result}}"

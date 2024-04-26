@@ -1,0 +1,7 @@
+all:
+  hosts:
+    vManage:
+      ansible_host: 
+      ansible_port: 443
+      username: 
+      password: 

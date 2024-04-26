@@ -1,0 +1,6 @@
+openpyxl
+requests
+urllib3
+python-dotenv
+PyYAML
+ansible

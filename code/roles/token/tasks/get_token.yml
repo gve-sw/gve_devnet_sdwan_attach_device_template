@@ -1,0 +1,14 @@
+- name: get_token
+  uri:
+    url: https://{{ansible_host}}:{{ansible_port}}/dataservice/client/token
+    method: GET
+    return_content: yes
+    validate_certs: no
+    headers:
+      Cookie: "{{login.set_cookie}}"
+  
+  register: token_result
+
+-  debug:
+    msg: "{{token_result.content}}"
+
