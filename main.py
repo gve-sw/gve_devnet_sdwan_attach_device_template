@@ -102,7 +102,7 @@ def modify_yml(map_templates_to_devices):
                 my_data=loaded[0]['roles']
                 r=len(my_data)
                 my_data.append({'role':'attach_device_template','vars':{'DeviceTemplateList':{t['templateName']:[{'csv-deviceId':'XYZ'}]}}})
-                with open("testPetrol.yml", 'w') as stream:
+                with open(YML_FILE, 'w') as stream:
                     try:
                         yaml.dump(loaded, stream, default_flow_style=False)
                     except yaml.YAMLError as exc:
